@@ -5,12 +5,12 @@ nav {
     padding: 10px 0;
   }
   
-  nav a {
+nav a {
     color: #333;
     text-decoration: none;
   }
   
-  nav a:hover {
+nav a:hover {
     color: #007bff;
   }
   
