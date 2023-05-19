@@ -9,9 +9,12 @@ function LoginPage() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // backend password check code 
-    navigate('/');
-  }
+    if (username === 'arun' && password === '123@') {
+      navigate('/admin-dashboard');
+    } else {
+      navigate('/home');
+    }
+  }  
 
   return (
     <div className="login-container">
