@@ -1,0 +1,21 @@
+/* SingleBlogPage.css */
+.single-blog-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: auto;
+    max-width: 800px;
+  }
+  
+  .single-blog-title {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .single-blog-content {
+    font-size: 1.2em;
+    color: #666;
+    line-height: 1.6;
+  }
+  
