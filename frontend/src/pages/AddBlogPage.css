@@ -1,84 +1,45 @@
-/* AddBlogPage.module.css */
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #f5f5f5;
-  }
-  
-  .form {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    margin-top: 20px;
-  }
-  
-  .input {
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  .button {
-  position: relative;
-  width: 150px;
-  height: 40px;
-  cursor: pointer;
+/* AddBlog.css */
+
+.add-blog-container {
+  width: 100%;
+}
+
+.add-blog-form {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  border: 1px solid #34974d;
-  background-color: #3aa856;
-  border-radius: 5px;
 }
 
-.button, .button__icon, .button__text {
-  transition: all 0.3s;
+.add-blog-title-input {
+  margin: 10px 0;
+  width: 50%;
 }
 
-.button .button__text {
-  transform: translateX(30px);
-  color: #fff;
-  font-weight: 600;
+.add-blog-content-input {
+  height: 200px; /* Adjust this value to your liking */
+  width: 50%;
+  margin: 10px 0;
+  overflow-y: auto;
 }
 
-.button .button__icon {
-  position: absolute;
-  transform: translateX(109px);
-  height: 100%;
-  width: 39px;
-  background-color: #34974d;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.add-blog-button {
+  margin: 10px 0;
 }
-
-.button .svg {
-  width: 30px;
-  stroke: #fff;
+label{
+  margin: 10px;
 }
-
-.button:hover {
-  background: #34974d;
+input{
+  margin: 10px;
 }
-
-.button:hover .button__text {
-  color: transparent;
+#b{
+  margin-top: 20px;
 }
-
-.button:hover .button__icon {
-  width: 148px;
-  transform: translateX(0);
+#a {
+  margin-top: 130px;
+  position: fixed;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  overflow-y: auto;
 }
-
-.button:active .button__icon {
-  background-color: #2e8644;
-}
-
-.button:active {
-  border: 1px solid #2e8644;
-}
-  
-  

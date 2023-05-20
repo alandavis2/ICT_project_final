@@ -1,43 +1,51 @@
-import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 import './EditBlogPage.css';
 
-function EditBlogPage() {
-  const { id } = useParams();
-  const navigate = useNavigate();
+const EditBlogPage = ({ match }) => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-
+  
   useEffect(() => {
     const blogPost = {
       title: 'Existing blog post',
       content: 'This is some existing content...'
     };
-
     setTitle(blogPost.title);
     setContent(blogPost.content);
-  }, [id]);
+  }, []); // Add dependencies if necessary
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(`Edited Blog Title: ${title}`);
-    console.log(`Edited Blog Content: ${content}`);
-    navigate('/');
-  };
+  const handleTitleChange = (e) => {
+    setTitle(e.target.value);
+  }
+
+  const handleContentChange = (value) => {
+    setContent(value);
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Here, you would typically make a PUT or PATCH request to your API to update the existing blog post
+    console.log({ title, content });
+    setTitle("");
+    setContent("");
+  }
 
   return (
-    <div className="container">
-      <h1>Edit Blog</h1>
-      <form onSubmit={handleSubmit} className="form">
+    <div id='b'>
+      <form onSubmit={handleSubmit}>
         <label>
           Title:
-          <input type="text" className="input" value={title} onChange={e => setTitle(e.target.value)} />
+          <br />
+          <input type="text" value={title} onChange={handleTitleChange} required />
         </label>
+        <br />
         <label>
           Content:
-          <textarea className="input" value={content} onChange={e => setContent(e.target.value)} />
         </label>
-        <input className="button" type="submit" value="Submit" />
+        <ReactQuill value={content} onChange={handleContentChange} id='a'/>
+        <button type="submit">Update Blog</button>
       </form>
     </div>
   );

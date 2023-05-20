@@ -3,12 +3,11 @@ import { Link } from 'react-router-dom';
 import './AdminDashboardPage.css';
 
 function AdminDashboardPage() {
-  // Here you would typically fetch the list of blogs from an API
-  const blogs = [{ id: 1, title: 'Blog 1' }, { id: 2, title: 'Blog 2' }];
+  const blogs = [{ id: 1, title: 'Blog 1' }, { id: 2, title: 'Blog 2' }]; // replace with read from db
 
   const handleDeleteBlog = (id) => {
-    // Here you would typically make a DELETE request to an API to delete the blog
     console.log(`Deleting blog with id: ${id}`);
+    //add delete code here 
   }
 
   return (
