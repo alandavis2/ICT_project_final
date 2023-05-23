@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import './LoginPage.css';
 
 function LoginPage() {
@@ -9,12 +10,29 @@ function LoginPage() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (username === 'arun' && password === '123@') {
-      navigate('/admin-dashboard');
-    } else {
-      navigate('/home');
-    }
-  }  
+
+    axios.post('http://localhost:5000/api/auth/login', {
+      username,
+      password
+    })
+    .then((response) => {
+      if (response.status === 200) {
+        // store the token in local storage, or in a cookie, or in memory depending on your needs
+        localStorage.setItem('token', response.data.token);
+        if (username === 'admin') {
+          navigate('/admin-dashboard');
+        } else {
+          navigate('/home');
+        }
+      } else {
+        alert('Login failed. Please check your username and password.');
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+      alert('Login failed. Please check your username and password.');
+    });
+  }
 
   return (
     <div className="login-container">

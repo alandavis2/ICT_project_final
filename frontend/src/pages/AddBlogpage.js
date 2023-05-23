@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css'; 
 import './AddBlogPage.css';
+import axios from 'axios';
 
 const AddBlog = () => {
   const [title, setTitle] = useState("");
@@ -17,10 +18,23 @@ const AddBlog = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here, you would typically make a POST request to your API to create a new blog post.
-    console.log({ title, content });
-    setTitle("");
-    setContent("");
+
+    const newBlog = {
+      title,
+      content
+    };
+
+    axios.post('http://localhost:5000/api/blogs', newBlog)
+      .then(response => {
+        console.log(response.data);
+        alert("Blog post added successfully!");
+        setTitle("");
+        setContent("");
+      })
+      .catch(error => {
+        console.error("There was an error creating the blog post:", error);
+        alert("There was an error while adding the blog post. Please try again later.");
+      });
   }
 
   return (

@@ -7,6 +7,7 @@ import LoginPage from './pages/LoginPage';
 import SingleBlogPage from './pages/SingleBlogPage';
 import AddBlogPage from './pages/AddBlogpage.js';
 import EditBlogPage from './pages/EditBlogPage';
+import RegistrationPage from './pages/RegistrationPage';
 
 import AdminDashboardPage from './pages/AdminDashboardPage';
 //components
@@ -23,6 +24,7 @@ function App() {
         <Route path="/add-blog" element={<AddBlogPage />} />
         <Route path="/edit-blog/:id" element={<EditBlogPage />} />
         <Route path="/admin-dashboard" element={<AdminDashboardPage />} />
+        <Route path="/registration" element={<RegistrationPage />} />
       </Routes>
     </Router>
   );

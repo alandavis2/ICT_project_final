@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './HomePage.css';
+import axios from 'axios';
 
 function HomePage() {
-  const blogs = [{ id: 1, title: 'Blog 1' }, { id: 2, title: 'Blog 2' }];//to be changed with Backend code to access data from database
-  
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:5000/api/blogs')
+      .then(response => setBlogs(response.data))
+      .catch(error => console.log(error));
+  }, []);
   return (
     <div className="container">
       <h1>Home Page</h1>

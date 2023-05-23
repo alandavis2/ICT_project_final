@@ -1,14 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './AdminDashboardPage.css';
+import axios from 'axios';
 
 function AdminDashboardPage() {
-  const blogs = [{ id: 1, title: 'Blog 1' }, { id: 2, title: 'Blog 2' }]; // replace with read from db
+  const [blogs, setBlogs] = useState([]); 
+
+  useEffect(() => {
+    axios.get('http://localhost:5000/api/blogs')
+      .then(response => setBlogs(response.data))
+      .catch(error => console.log(error));
+  }, []);
 
   const handleDeleteBlog = (id) => {
-    console.log(`Deleting blog with id: ${id}`);
-    //add delete code here 
+    axios.delete(`http://localhost:5000/api/blogs/${id}`)
+      .then(response => {
+        setBlogs(blogs.filter(blog => blog._id !== id));
+      })
+      .catch(error => console.log(error));
   }
+  
 
   return (
     <div className="dashboard">
