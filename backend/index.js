@@ -9,7 +9,7 @@ app.use(cors());
 
 const dbURI = 'mongodb+srv://arunknair2003:WQxDAYa5EBEWBJGZ@cluster0.dbylnkz.mongodb.net/Arun';
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then((result) => {
+  .then(() => {
     console.log("Connected to MongoDB");
     app.listen(5001, () => {
       console.log("Server is listening on port 5001");
@@ -20,5 +20,10 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
   });
 
 app.use('/api/blogs', require('./routes/blogs'));
+
+// Import routes for users
+const usersRoutes = require('./routes/users');
+app.use('/api/users', usersRoutes);
+
 
 

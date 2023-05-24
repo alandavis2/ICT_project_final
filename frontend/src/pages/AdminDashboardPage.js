@@ -18,17 +18,16 @@ function AdminDashboardPage() {
   }, []);
 
   const handleDeleteBlog = (id) => {
-    // Make a DELETE request to the backend API
-    axios.delete(`http://localhost:5001/api/blogs/${id}`)
+    if (!id) return;
+  
+    axios.delete(`/api/blogs/${id}`)
       .then(response => {
-        console.log(`Deleted blog with id: ${id}`);
-        // Remove the deleted blog from the local state
-        setBlogs(blogs.filter(blog => blog.id !== id));
+        console.log("Blog deleted");
+        setBlogs(blogs.filter(blog => blog.id !== id)); // remove deleted blog from state
       })
-      .catch(error => {
-        console.error(`There was an error deleting the blog with id: ${id}`, error);
-      });
+      .catch(error => console.error("Error deleting blog:", error));
   }
+  
 
   return (
     <div className="dashboard">
