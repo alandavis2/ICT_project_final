@@ -17,7 +17,6 @@ function LoginPage() {
     })
     .then((response) => {
       if (response.status === 200) {
-        // store the token in local storage, or in a cookie, or in memory depending on your needs
         localStorage.setItem('token', response.data.token);
         if (username === 'admin') {
           navigate('/admin-dashboard');

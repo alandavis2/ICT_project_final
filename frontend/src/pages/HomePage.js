@@ -6,7 +6,6 @@ const HomePage = () => {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
-    // Fetch the list of blogs from the backend
     axios.get('http://localhost:5001/api/blogs')
       .then(response => {
         setBlogs(response.data);

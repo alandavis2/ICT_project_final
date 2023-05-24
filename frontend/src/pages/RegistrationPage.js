@@ -6,14 +6,12 @@ import './RegistrationPage.css';
 function RegistrationPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [email, setEmail] = useState('');
+  
   const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
-
-    // Make a POST request to create a new user
-    axios.post('http://localhost:5001/api/users', { username, password, email })
+    axios.post('http://localhost:5001/api/users', { username, password})
       .then(response => {
         console.log(response.data);
         alert("User registered successfully!");
@@ -30,7 +28,6 @@ function RegistrationPage() {
       <h1>Register</h1>
       <form onSubmit={handleRegister} className="register-form">
         <input type="text" value={username} onChange={e => setUsername(e.target.value)} placeholder="Username" className="register-input"/>
-        <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" className="register-input"/>
         <input type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" className="register-input"/>
         <button type="submit" className="register-button">Register</button>
       </form>

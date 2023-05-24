@@ -9,7 +9,6 @@ const EditBlogPage = ({ match }) => {
   const [content, setContent] = useState("");
 
   useEffect(() => {
-    // Fetch the current blog post using its id
     axios.get(`http://localhost:5001/api/blogs/${match.params.id}`)
       .then(response => {
         setTitle(response.data.title);
@@ -30,8 +29,6 @@ const EditBlogPage = ({ match }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Make a PUT request to update the existing blog post
     axios.put(`http://localhost:5001/api/blogs/${match.params.id}`, { title, content })
       .then(response => {
         console.log(response.data);

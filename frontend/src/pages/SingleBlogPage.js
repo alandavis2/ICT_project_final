@@ -7,7 +7,6 @@ const SingleBlogPage = () => {
   const [blog, setBlog] = useState(null);
 
   useEffect(() => {
-    // Fetch the blog from the backend based on the ID in the URL params
     axios.get(`http://localhost:5001/api/blogs/${id}`)
       .then(response => {
         setBlog(response.data);
