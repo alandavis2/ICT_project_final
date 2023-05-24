@@ -1,25 +1,34 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './AdminDashboardPage.css';
 import axios from 'axios';
+import './AdminDashboardPage.css';
 
 function AdminDashboardPage() {
-  const [blogs, setBlogs] = useState([]); 
+  const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/blogs')
-      .then(response => setBlogs(response.data))
-      .catch(error => console.log(error));
+    // Fetch the blogs from the backend API
+    axios.get('http://localhost:5001/api/blogs')
+      .then(response => {
+        setBlogs(response.data);
+      })
+      .catch(error => {
+        console.error("There was an error fetching the blogs:", error);
+      });
   }, []);
 
   const handleDeleteBlog = (id) => {
-    axios.delete(`http://localhost:5000/api/blogs/${id}`)
+    // Make a DELETE request to the backend API
+    axios.delete(`http://localhost:5001/api/blogs/${id}`)
       .then(response => {
-        setBlogs(blogs.filter(blog => blog._id !== id));
+        console.log(`Deleted blog with id: ${id}`);
+        // Remove the deleted blog from the local state
+        setBlogs(blogs.filter(blog => blog.id !== id));
       })
-      .catch(error => console.log(error));
+      .catch(error => {
+        console.error(`There was an error deleting the blog with id: ${id}`, error);
+      });
   }
-  
 
   return (
     <div className="dashboard">
@@ -35,4 +44,5 @@ function AdminDashboardPage() {
 }
 
 export default AdminDashboardPage;
+
 

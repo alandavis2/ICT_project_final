@@ -1,23 +1,30 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
-import './SingleBlogPage.css';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
-function SingleBlogPage({ match }) {
+const SingleBlogPage = () => {
+  const { id } = useParams();
   const [blog, setBlog] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/blogs/${match.params.id}`)
-      .then(response => setBlog(response.data))
-      .catch(error => console.log(error));
-  }, [match.params.id]);
+    // Fetch the blog from the backend based on the ID in the URL params
+    axios.get(`http://localhost:5001/api/blogs/${id}`)
+      .then(response => {
+        setBlog(response.data);
+      })
+      .catch(error => {
+        console.error('There was an error fetching the blog:', error);
+      });
+  }, [id]);
+
+  if (!blog) {
+    return <div>Loading...</div>;
+  }
 
   return (
-    <div className="single-blog-container">
-      <h1 className="single-blog-title">{blog.title}</h1>
-      <p className="single-blog-content">{blog.content}</p>
+    <div>
+      <h1>{blog.title}</h1>
+      <div dangerouslySetInnerHTML={{ __html: blog.content }} />
     </div>
   );
 }

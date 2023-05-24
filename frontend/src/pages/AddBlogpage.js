@@ -24,7 +24,7 @@ const AddBlog = () => {
       content
     };
 
-    axios.post('http://localhost:5000/api/blogs', newBlog)
+    axios.post('http://localhost:5001/api/blogs', newBlog)
       .then(response => {
         console.log(response.data);
         alert("Blog post added successfully!");

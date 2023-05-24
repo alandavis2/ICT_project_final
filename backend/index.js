@@ -9,8 +9,16 @@ app.use(cors());
 
 const dbURI = 'mongodb+srv://arunknair2003:WQxDAYa5EBEWBJGZ@cluster0.dbylnkz.mongodb.net/Arun';
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then((result) => app.listen(5001))
-  .catch((err) => console.log(err));
+  .then((result) => {
+    console.log("Connected to MongoDB");
+    app.listen(5001, () => {
+      console.log("Server is listening on port 5001");
+    });
+  })
+  .catch((err) => {
+    console.log("Error connecting to MongoDB: ", err);
+  });
 
 app.use('/api/blogs', require('./routes/blogs'));
+
 

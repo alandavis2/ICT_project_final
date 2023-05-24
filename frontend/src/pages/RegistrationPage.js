@@ -13,7 +13,7 @@ function RegistrationPage() {
     e.preventDefault();
 
     // Make a POST request to create a new user
-    axios.post('http://localhost:5000/api/users', { username, password, email })
+    axios.post('http://localhost:5001/api/users', { username, password, email })
       .then(response => {
         console.log(response.data);
         alert("User registered successfully!");

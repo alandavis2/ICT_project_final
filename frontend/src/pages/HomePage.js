@@ -1,27 +1,35 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import './HomePage.css';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
-function HomePage() {
+const HomePage = () => {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/blogs')
-      .then(response => setBlogs(response.data))
-      .catch(error => console.log(error));
+    // Fetch the list of blogs from the backend
+    axios.get('http://localhost:5001/api/blogs')
+      .then(response => {
+        setBlogs(response.data);
+      })
+      .catch(error => {
+        console.error('There was an error fetching the blogs:', error);
+      });
   }, []);
+
   return (
-    <div className="container">
+    <div>
       <h1>Home Page</h1>
-      <div className="blogs">
+      <ul>
         {blogs.map(blog => (
-          <Link className="blog-link" key={blog.id} to={`/blog/${blog.id}`}>{blog.title}</Link>
+          <li key={blog._id}>
+            <Link to={`/blog/${blog._id}`}>{blog.title}</Link>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 }
 
 export default HomePage;
+
 

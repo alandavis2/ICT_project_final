@@ -11,7 +11,7 @@ function LoginPage() {
   const handleLogin = (e) => {
     e.preventDefault();
 
-    axios.post('http://localhost:5000/api/auth/login', {
+    axios.post('http://localhost:5001/api/auth/login', {
       username,
       password
     })
