@@ -18,7 +18,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
     console.log("Error connecting to MongoDB: ", err);
   });
 const usersRoutes = require('./routes/users');
-app.use('/api/blogs', require('./routes/blogs'));
+const blogsRoutes = require('./routes/blogs');
+app.use('/api/blogs', blogsRoutes);
 app.use('/api/users', usersRoutes);
 
 
