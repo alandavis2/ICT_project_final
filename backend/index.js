@@ -1,7 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-
 const app = express();
 
 app.use(express.json());
@@ -18,11 +17,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .catch((err) => {
     console.log("Error connecting to MongoDB: ", err);
   });
-
-app.use('/api/blogs', require('./routes/blogs'));
-
-// Import routes for users
 const usersRoutes = require('./routes/users');
+app.use('/api/blogs', require('./routes/blogs'));
 app.use('/api/users', usersRoutes);
 
 
