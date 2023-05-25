@@ -32,7 +32,10 @@ function LoginPage() {
       alert('Login failed. Please check your username and password.');
     });
   }
-  
+
+  const handleRegistration = () => {
+    navigate('/register');
+  }
 
   return (
     <div className="login-container">
@@ -41,11 +44,10 @@ function LoginPage() {
         <input type="text" value={username} onChange={e => setUsername(e.target.value)} placeholder="Username" className="login-input"/>
         <input type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" className="login-input"/>
         <button type="submit" className="login-button">Login</button>
+        <button type="button" onClick={handleRegistration} className="register-button">Register</button>
       </form>
     </div>
   );
 }
 
 export default LoginPage;
-
-

@@ -5,6 +5,8 @@ import './AdminDashboardPage.css';
 
 function AdminDashboardPage() {
   const [blogs, setBlogs] = useState([]);
+  const [error, setError] = useState('');
+  const [message, setMessage] = useState('');
 
   useEffect(() => {
     axios.get('http://localhost:5001/api/blogs')
@@ -13,34 +15,42 @@ function AdminDashboardPage() {
       })
       .catch(error => {
         console.error("There was an error fetching the blogs:", error);
+        setError("There was an error fetching the blogs.");
       });
   }, []);
 
   const handleDeleteBlog = (id) => {
     if (!id) return;
-  
-    axios.delete(`/api/blogs/${id}`)
+
+    axios.delete(`http://localhost:5001/api/blogs/${id}`)
       .then(response => {
-        console.log("Blog deleted");
-        setBlogs(blogs.filter(blog => blog.id !== id));
+        setMessage("Blog deleted successfully");
+        setBlogs(blogs.filter(blog => blog._id !== id));
       })
-      .catch(error => console.error("Error deleting blog:", error));
+      .catch(error => {
+        console.error("Error deleting blog:", error);
+        setError("Error deleting blog.");
+      });
   }
-  
 
   return (
     <div className="dashboard">
       <h1 className="dashboard-title">Admin Dashboard</h1>
+      {error && <p className="error-message">{error}</p>}
+      {message && <p className="success-message">{message}</p>}
       {blogs.map(blog => (
-        <div key={blog.id} className="blog-entry">
-          <Link to={`/edit-blog/${blog.id}`} className="blog-title">{blog.title}</Link>
-          <button onClick={() => handleDeleteBlog(blog.id)} className="delete-button">Delete</button>
+        <div key={blog._id} className="blog-entry">
+          <Link to={`/edit-blog/${blog._id}`} className="blog-title">{blog.title}</Link>
+          <button onClick={() => handleDeleteBlog(blog._id)} className="delete-button">Delete</button>
+          <button className="edit-button"><Link to={`/edit-blog/${blog._id}`}>Edit</Link></button>
         </div>
+        
       ))}
     </div>
   );
 }
 
 export default AdminDashboardPage;
+
 
 

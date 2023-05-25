@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import './SingleBlogPage.css';
 
 const SingleBlogPage = () => {
   const { id } = useParams();
@@ -21,14 +22,13 @@ const SingleBlogPage = () => {
   }
 
   return (
-    <div id="b">
-      <div>
-      <h1>{blog.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: blog.content }} />
+    <div id="b" className="single-blog-container">
+      <div className="blog-content">
+        <h1>{blog.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: blog.content }} />
       </div>
     </div>
   );
 }
-
 
 export default SingleBlogPage;

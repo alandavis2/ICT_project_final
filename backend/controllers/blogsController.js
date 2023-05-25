@@ -1,5 +1,6 @@
 const Blog = require('../models/Blog');
 
+
 const blog_index = (req, res) => {
   Blog.find()
     .then((result) => {
@@ -7,6 +8,7 @@ const blog_index = (req, res) => {
     })
     .catch((err) => {
       console.log(err);
+      res.status(500).send({ message: 'Server error' });
     });
 };
 
@@ -29,6 +31,7 @@ const blog_create = (req, res) => {
     })
     .catch(err => {
       console.log(err);
+      res.status(500).send({ message: "Error creating blog" });
     });
 };
 
@@ -40,6 +43,7 @@ const blog_update = (req, res) => {
     })
     .catch(err => {
       console.log(err);
+      res.status(500).send({ message: "Error updating blog" });
     });
 };
 
@@ -47,10 +51,15 @@ const blog_delete = (req, res) => {
   const id = req.params.id;
   Blog.findByIdAndDelete(id)
     .then(result => {
-      res.send(result);
+      if(result) {
+        res.send(result);
+      } else {
+        res.status(404).send({ message: 'Blog not found' });
+      }
     })
     .catch(err => {
       console.log(err);
+      res.status(500).send({ message: 'Server error' });
     });
 };
 

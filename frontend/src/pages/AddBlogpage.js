@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css'; 
+import 'react-quill/dist/quill.snow.css';
 import './AddBlogPage.css';
 import axios from 'axios';
 
 const AddBlog = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  
+
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
   }
@@ -41,16 +41,16 @@ const AddBlog = () => {
     <div id='b'>
       <form onSubmit={handleSubmit}>
         <label>
-          Title:
-          <br />
+          <span>Title:</span>
           <input type="text" value={title} onChange={handleTitleChange} required />
+          <button type="submit">Add Blog</button>
         </label>
-        <br />
         <label>
-          Content:
+          <span>Content:</span>
         </label>
-        <ReactQuill value={content} onChange={handleContentChange} id='a'/>
-        <button type="submit">Add Blog</button>
+        <div id ='a' className="quill-container">
+          <ReactQuill value={content} onChange={handleContentChange} />
+        </div>
       </form>
     </div>
   );
