@@ -10,8 +10,8 @@ function LoginPage() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-
-    axios.post('http://localhost:5001/api/auth/login', {
+  
+    axios.post('http://localhost:5001/api/users/login', {
       username,
       password
     })
@@ -32,6 +32,7 @@ function LoginPage() {
       alert('Login failed. Please check your username and password.');
     });
   }
+  
 
   return (
     <div className="login-container">

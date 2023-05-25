@@ -17,10 +17,10 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .catch((err) => {
     console.log("Error connecting to MongoDB: ", err);
   });
+
 const usersRoutes = require('./routes/users');
 const blogsRoutes = require('./routes/blogs');
-app.use('/api/blogs', blogsRoutes);
 app.use('/api/users', usersRoutes);
+app.use('/api/blogs', blogsRoutes);
 
-
-
+module.exports = app;

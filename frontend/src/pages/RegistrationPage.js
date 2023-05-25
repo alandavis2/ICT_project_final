@@ -11,7 +11,7 @@ function RegistrationPage() {
 
   const handleRegister = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:5001/api/users', { username, password})
+    axios.post('http://localhost:5001/api/users/register', { username, password })
       .then(response => {
         console.log(response.data);
         alert("User registered successfully!");
@@ -22,6 +22,7 @@ function RegistrationPage() {
         alert("There was an error while registering the user. Please try again later.");
       });
   }
+  
 
   return (
     <div className="register-container">

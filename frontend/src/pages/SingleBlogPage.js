@@ -17,15 +17,18 @@ const SingleBlogPage = () => {
   }, [id]);
 
   if (!blog) {
-    return <div>Loading...</div>;
+    return <div>Not Found</div>;
   }
 
   return (
-    <div>
+    <div id="b">
+      <div>
       <h1>{blog.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: blog.content }} />
+      </div>
     </div>
   );
 }
+
 
 export default SingleBlogPage;

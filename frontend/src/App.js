@@ -24,7 +24,7 @@ function App() {
         <Route path="/add-blog" element={<AddBlogPage />} />
         <Route path="/edit-blog/:id" element={<EditBlogPage />} />
         <Route path="/admin-dashboard" element={<AdminDashboardPage />} />
-        <Route path="/regist" element={<RegistrationPage />} />
+        <Route path="/register" element={<RegistrationPage />} />
       </Routes>
     </Router>
   );

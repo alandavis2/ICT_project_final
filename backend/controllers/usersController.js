@@ -33,6 +33,7 @@ const user_login = async (req, res) => {
 };
 
 module.exports = {
-  user_register,
-  user_login
+  user_register: user_register,
+  user_login: user_login
 };
+
