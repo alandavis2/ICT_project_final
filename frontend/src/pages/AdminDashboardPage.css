@@ -1,40 +1,59 @@
+/* AdminDashboardPage.css */
+
 .dashboard {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-  }
-  
-  .dashboard-title {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  .blog-entry {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #ddd;
-    padding: 10px 0;
-  }
-  
-  .blog-title {
-    color: #007BFF;
-    text-decoration: none;
-  }
-  
-  .delete-button {
-    padding: 5px 10px;
-    background-color: #dc3545;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .delete-button:hover {
-    background-color: #c82333;
-  }
-  
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.dashboard-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.blog-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.blog-entry .blog-title {
+  font-size: 18px;
+  color: #333;
+  text-decoration: none;
+}
+
+.blog-entry .delete-button,
+.blog-entry .edit-button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.blog-entry .delete-button {
+  background-color: #ff4d4f;
+  color: #fff;
+}
+
+.blog-entry .edit-button {
+  background-color: #4dabf7;
+  color: #fff;
+}
+
+.error-message {
+  color: #ff4d4f;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.success-message {
+  color: #52c41a;
+  text-align: center;
+  margin-bottom: 10px;
+}

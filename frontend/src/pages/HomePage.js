@@ -1,21 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
-import './HomePage.css';
 
-function HomePage() {
-  const blogs = [{ id: 1, title: 'Blog 1' }, { id: 2, title: 'Blog 2' }];//to be changed with Backend code to access data from database
-  
+const HomePage = () => {
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:5001/api/blogs')
+      .then(response => {
+        setBlogs(response.data);
+      })
+      .catch(error => {
+        console.error('There was an error fetching the blogs:', error);
+      });
+  }, []);
+
   return (
-    <div className="container">
+    <div>
       <h1>Home Page</h1>
-      <div className="blogs">
+      <ul>
         {blogs.map(blog => (
-          <Link className="blog-link" key={blog.id} to={`/blog/${blog.id}`}>{blog.title}</Link>
+          <li key={blog._id}>
+            <Link to={`/blog/${blog._id}`}>{blog.title}</Link>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 }
 
 export default HomePage;
+
 

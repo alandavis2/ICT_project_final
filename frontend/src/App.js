@@ -6,8 +6,10 @@ import HomePage from './pages/HomePage.js';
 import LoginPage from './pages/LoginPage';
 import SingleBlogPage from './pages/SingleBlogPage';
 import AddBlogPage from './pages/AddBlogpage.js';
-import EditBlogPage from './pages/EditBlogPage';
-import AdminDashboardPage from './pages/AdminDashboardPage';
+import EditBlogPage from './pages/EditBlogPage.js';
+import RegistrationPage from './pages/RegistrationPage.js';
+
+import AdminDashboardPage from './pages/AdminDashboardPage.js';
 //components
 import NavBar from './components/NavBar';
 
@@ -21,7 +23,9 @@ function App() {
         <Route path="/blog/:id" element={<SingleBlogPage />} />
         <Route path="/add-blog" element={<AddBlogPage />} />
         <Route path="/edit-blog/:id" element={<EditBlogPage />} />
+        
         <Route path="/admin-dashboard" element={<AdminDashboardPage />} />
+        <Route path="/register" element={<RegistrationPage />} />
       </Routes>
     </Router>
   );
