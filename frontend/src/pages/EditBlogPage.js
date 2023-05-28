@@ -3,13 +3,15 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import './EditBlogPage.css';
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
-const EditBlogPage = ({ match }) => {
+const EditBlogPage = () => {
+  const { id } = useParams();
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
   useEffect(() => {
-    axios.get(`http://localhost:5001/api/blogs/${match.params.id}`)
+    axios.get(`http://localhost:5001/api/blogs/${id}`)
       .then(response => {
         setTitle(response.data.title);
         setContent(response.data.content);
@@ -17,7 +19,7 @@ const EditBlogPage = ({ match }) => {
       .catch(error => {
         console.error("There was an error fetching the blog post:", error);
       });
-  }, [match.params.id]);
+  }, [id]);
 
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
@@ -29,7 +31,7 @@ const EditBlogPage = ({ match }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.put(`http://localhost:5001/api/blogs/${match.params.id}`, { title, content })
+    axios.put(`http://localhost:5001/api/blogs/${id}`, { title, content })
       .then(response => {
         console.log(response.data);
         alert("Blog post updated successfully!");
