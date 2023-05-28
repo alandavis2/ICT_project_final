@@ -11,6 +11,7 @@ const SingleBlogPage = () => {
     axios.get(`http://localhost:5001/api/blogs/${id}`)
       .then(response => {
         setBlog(response.data);
+        
       })
       .catch(error => {
         console.error('There was an error fetching the blog:', error);

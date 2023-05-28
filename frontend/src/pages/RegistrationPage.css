@@ -1,44 +1,89 @@
-/* RegistrationPage.css */
-
-.register-container {
+.form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-top: 50px;
-  background-color: #f2f2f2;
-  padding: 20px;
-  border-radius: 4px;
+  gap: 10px;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 0.4em;
+  background-color: #171717;
+  border-radius: 25px;
+  transition: .4s ease-in-out;
 }
-
-h1 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.register-form {
+.center {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 
-.register-input {
-  width: 300px;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+#heading {
+  text-align: center;
+  margin: 2em;
+  color: rgb(255, 255, 255);
+  font-size: 1.2em;
 }
-
-.register-button {
-  width: 300px;
-  padding: 10px;
-  background-color: #4caf50;
-  color: white;
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  border-radius: 25px;
+  padding: 0.6em;
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  outline: none;
+  color: white;
+  background-color: #171717;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
 }
-
-.register-button:hover {
-  background-color: #45a049;
+.input-icon {
+  height: 1.3em;
+  width: 1.3em;
+  fill: white;
+}
+.input-field {
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  color: #d3d3d3;
+}
+.form .btn {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 2.5em;
+}
+.button1 {
+  padding: 0.5em;
+  padding-left: 1.1em;
+  padding-right: 1.1em;
+  border-radius: 5px;
+  margin-right: 0.5em;
+  border: none;
+  outline: none;
+  transition: .4s ease-in-out;
+  background-color: #252525;
+  color: white;
+}
+.button1:hover {
+  background-color: rgb(19, 90, 255);
+  color: white;
+}
+.button2 {
+  padding: 0.5em;
+  padding-left: 2.3em;
+  padding-right: 2.3em;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  transition: .4s ease-in-out;
+  background-color: #252525;
+  color: white;
+}
+.button2:hover {
+  background-color: rgb(12, 227, 48);
+  color: white;
+}
+body {
+  background-color: #000; /* This represents black color */
 }
