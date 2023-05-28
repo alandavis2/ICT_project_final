@@ -31,6 +31,7 @@ function AdminDashboardPage() {
         console.error("Error deleting blog:", error);
         setError("Error deleting blog.");
       });
+      
   }
 
   return (

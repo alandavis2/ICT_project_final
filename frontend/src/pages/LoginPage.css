@@ -1,48 +1,89 @@
-/* LoginPage.css */
-
-.login-container {
+.form {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 0.4em;
+  background-color: #171717;
+  border-radius: 25px;
+  transition: .4s ease-in-out;
+}
+.center {
+  display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f5f5f5;
 }
 
-h1 {
-  margin-bottom: 20px;
+#heading {
+  text-align: center;
+  margin: 2em;
+  color: rgb(255, 255, 255);
+  font-size: 1.2em;
 }
-
-.login-form {
+.field {
   display: flex;
-  flex-direction: column;
-  width: 300px;
-  margin-bottom: 20px;
-}
-
-.login-input {
-  margin-bottom: 10px;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 16px;
-}
-
-.login-button, .register-button {
-  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  border-radius: 25px;
+  padding: 0.6em;
   border: none;
-  border-radius: 4px;
+  outline: none;
   color: white;
-  font-size: 16px;
-  cursor: pointer;
+  background-color: #171717;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
 }
-
-.login-button {
-  background-color: #007bff;
-  margin-bottom: 10px;
+.input-icon {
+  height: 1.3em;
+  width: 1.3em;
+  fill: white;
 }
-
-.login-button:hover {
-  background-color: #000000;
-
+.input-field {
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  color: #d3d3d3;
+}
+.form .btn {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 2.5em;
+}
+.button1 {
+  padding: 0.5em;
+  padding-left: 1.1em;
+  padding-right: 1.1em;
+  border-radius: 5px;
+  margin-right: 0.5em;
+  border: none;
+  outline: none;
+  transition: .4s ease-in-out;
+  background-color: #252525;
+  color: white;
+}
+.button1:hover {
+  background-color: rgb(19, 90, 255);
+  color: white;
+}
+.button2 {
+  padding: 0.5em;
+  padding-left: 2.3em;
+  padding-right: 2.3em;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  transition: .4s ease-in-out;
+  background-color: #252525;
+  color: white;
+}
+.button2:hover {
+  background-color: rgb(12, 227, 48);
+  color: white;
+}
+body {
+  background-color: #000; /* This represents black color */
 }
