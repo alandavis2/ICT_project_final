@@ -31,7 +31,6 @@ function AdminDashboardPage() {
         console.error("Error deleting blog:", error);
         setError("Error deleting blog.");
       });
-      
   }
 
   return (
@@ -41,17 +40,15 @@ function AdminDashboardPage() {
       {message && <p className="success-message">{message}</p>}
       {blogs.map(blog => (
         <div key={blog._id} className="blog-entry">
-          <Link to={`/edit-blog/${blog._id}`} className="blog-title">{blog.title}</Link>
+          <div className="blog-title">
+            <Link to={`/edit-blog/${blog._id}`} className="blog-link">{blog.title}</Link>
+          </div>
           <button onClick={() => handleDeleteBlog(blog._id)} className="delete-button">Delete</button>
-          <button className="edit-button"><Link to={`/edit-blog/${blog._id}`}>Edit</Link></button>
+          <button className="edit-button"><Link to={`/edit-blog/${blog._id}`} className="edit-link">Edit</Link></button>
         </div>
-        
       ))}
     </div>
   );
 }
 
 export default AdminDashboardPage;
-
-
-

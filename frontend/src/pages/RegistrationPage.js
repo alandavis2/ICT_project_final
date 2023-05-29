@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import './RegistrationPage.css';
+import './LoginPage.css';  // reusing the LoginPage CSS
 
 function RegistrationPage() {
   const [username, setUsername] = useState('');

@@ -54,7 +54,9 @@ const EditBlogPage = () => {
         <label>
           Content:
         </label>
-        <ReactQuill value={content} onChange={handleContentChange} id='a'/>
+        <div id ='a' className="quill-container">
+          <ReactQuill value={content} onChange={handleContentChange} />
+        </div>
         <button type="submit">Update Blog</button>
       </form>
     </div>
@@ -62,5 +64,3 @@ const EditBlogPage = () => {
 }
 
 export default EditBlogPage;
-
-

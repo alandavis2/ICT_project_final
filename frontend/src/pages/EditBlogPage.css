@@ -1,49 +1,52 @@
-/* EditBlogPage.css */
-
 #b {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: #f5f5f5;
+  padding: 20px;
+  background-color: #f8f9fa;
 }
 
 form {
   display: flex;
   flex-direction: column;
   width: 60%;
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+  margin-top: 20px;
 }
 
-label {
-  font-weight: 500;
+form label {
+  font-size: 1.25rem;
+  color: #343a40;
   margin-bottom: 10px;
 }
 
-input[type="text"] {
-  padding: 10px;
+form input[type="text"] {
   margin-bottom: 20px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
 }
 
-#quill-container .ql-editor {
-  min-height: 200px;
-}
-
-button {
+form button[type="submit"] {
+  align-self: flex-end;
   padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  background-color: #007BFF;
+  background-color: #007bff;
   color: white;
+  border: none;
+  border-radius: 0.25rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.2s;
 }
 
-button:hover {
+form button[type="submit"]:hover {
   background-color: #0056b3;
+}
+
+#b .quill-container {
+  height: 400px;
+  margin-bottom: 20px;
+  border: 1px solid #ced4da;
+  min-height: 200px;
+  max-height: 400px;
+  overflow-y: auto;
 }
