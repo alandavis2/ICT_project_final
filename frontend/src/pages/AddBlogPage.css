@@ -1,87 +1,52 @@
 #b {
-  display: fixed;
-  justify-content: center;
-  align-items: center;
-  height: 90vh;
-  width: 100vw;
-}
-
-
-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
+  padding: 20px;
+  background-color: #f8f9fa;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin-top: 20px;
+}
 
 form label {
-  display: block;
+  font-size: 1.25rem;
+  color: #343a40;
   margin-bottom: 10px;
-  font-weight: bold;
 }
 
-form input {
-  width: 100%;
-  padding: 10px;
-  font-size: 1em;
-  border-radius: 4px;
-  border: 1px solid #ccc;
+form input[type="text"] {
   margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
 }
 
-.quill-container .ql-editor {
+form button[type="submit"] {
+  align-self: flex-end;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+#b .quill-container {
+  height: 400px;
+  margin-bottom: 20px;
+  border: 1px solid #ced4da;
   min-height: 200px;
   max-height: 400px;
   overflow-y: auto;
-}
-
-button {
-  background-color: #008CBA;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin-top: 10px;
-  cursor: pointer;
-}
-
-
-
-form label {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-
-form label span {
-  margin-right: 10px;
-}
-
-form label input {
-  flex: 1;
-  padding: 10px;
-  font-size: 1em;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  margin-right: 10px;
-}
-
-form label button {
-  background-color: #008CBA;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  cursor: pointer;
 }
