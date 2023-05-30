@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
-import logo from './logo.jpg';
+import logo from './logo.jpg';  // import your logo
 
 function Navbar() {
   return (
@@ -10,22 +10,27 @@ function Navbar() {
         <Link to="/home" className="logo-link">
           <div className="logo-container">
             <img src={logo} alt="Logo" className="logo" />
-            <h1 className="logo-text">Blog App</h1>
+            <h1 className="logo-text">LearnBlog</h1>
           </div>
         </Link>
 
         <div className="tabs">
+
           <button className="tab">
-            <Link to="/home" className="navbar-link" id='ad'>Home</Link>
+            <Link className="tab" to="/home">Home</Link>
+          </button>
+
+
+          <button className="tab">
+            <Link className="tab" to="/add-blog">Add Blog</Link>
           </button>
 
           <button className="tab">
-            <Link to="/add-blog" className="navbar-link" id='ad'>Add Blog</Link>
+            <Link className="tab" to="/">Logout</Link>
           </button>
 
-          <button className="tab">
-            <Link to="/" className="navbar-link" id='ad'>Logout</Link>
-          </button>
+
+          <span className="glider"></span>
         </div>
       </nav>
     </div>
@@ -33,3 +38,4 @@ function Navbar() {
 }
 
 export default Navbar;
+
