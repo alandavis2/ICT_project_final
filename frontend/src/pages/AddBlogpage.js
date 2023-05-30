@@ -39,6 +39,8 @@ const AddBlog = () => {
 
   return (
     <div id='b'>
+      <br></br>
+      <br></br>
       <form onSubmit={handleSubmit}>
         <label>
           <span>Title:</span>

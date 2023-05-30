@@ -18,13 +18,13 @@ const HomePage = () => {
 
   return (
     <div className="homepage">
-      <h1 className="head">Blog Lists</h1>
+      <br /><br />
       <ul className="blog-list">
         {blogs.map(blog => (
           <li key={blog._id} className="blog-item">
             <div className="blog-card">
               <h2 className="blog-title">{blog.title}</h2>
-              <p className="blog-excerpt">{blog.content.slice(3, 153)}...</p>
+              <p className="blog-excerpt">{blog.content.slice(3, 153)}<Link to={`/blog/${blog._id}`} className="read-more-link">...</Link></p>
               <Link to={`/blog/${blog._id}`} className="read-more-link">Read more</Link>
             </div>
           </li>

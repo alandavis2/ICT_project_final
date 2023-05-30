@@ -9,7 +9,6 @@ import SingleBlogPage from './pages/SingleBlogPage';
 import AddBlogPage from './pages/AddBlogpage.js';
 import EditBlogPage from './pages/EditBlogPage.js';
 import RegistrationPage from './pages/RegistrationPage.js';
-import UserProfilePage from './pages/UserProfilePage.js';
 
 import AdminDashboardPage from './pages/AdminDashboardPage.js';
 //components
@@ -27,7 +26,6 @@ function App() {
         <Route path="/edit-blog/:id" element={<><NavBar  /><EditBlogPage /></>} />
         <Route path="/admin-dashboard" element={<><NavBar/><AdminDashboardPage/></>} />
         <Route path="/register" element={<RegistrationPage />} />
-        <Route path="/user-profile" element={<><NavBar  /><UserProfilePage /></>} />
       </Routes>
     </Router>
   );
