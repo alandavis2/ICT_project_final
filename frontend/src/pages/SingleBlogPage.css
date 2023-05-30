@@ -9,7 +9,7 @@
   min-height: calc(100vh - 60px); /* Adjust this value according to the height of your navbar */
   overflow-x: hidden;
   overflow-y: auto;
-  animation: change 40s steps(1) infinite;
+  animation: change 50s steps(1) infinite; /* Increased animation duration to 60 seconds */
   background-size: cover;
 }
 
@@ -28,9 +28,42 @@
   margin-bottom: 1em;
 }
 
+
 @keyframes change {
-  0%, 24% {background-image: url('/Users/arun/ICT_project_final/frontend/src/pages/images/image1.json');}
-  25%, 49% {background-image: url('/Users/arun/ICT_project_final/frontend/src/pages/images/image2.json');}
-  50%, 74% {background-image: url('/Users/arun/ICT_project_final/frontend/src/pages/images/image3.json');}
-  75%, 100% {background-image: url('/Users/arun/ICT_project_final/frontend/src/pages/images/images1.json');}
+
+  
+  0%, 10%{
+    background-image: url('/src/pages/images/image1.jpeg');
+  }
+  10%, 20%{
+    background-image: url('/src/pages/images/image2.jpeg');
+  }
+  20%, 30%{
+    background-image: url('/src/pages/images/image3.jpeg');
+  }
+  30%, 40%{
+    background-image: url('/src/pages/images/image4.jpeg');
+  }
+  40%, 50%{
+    background-image: url('/src/pages/images/image5.jpeg');
+  }
+  50%, 60%{
+    background-image: url('/src/pages/images/image6.jpeg');
+  }
+  60%, 70%{
+    background-image: url('/src/pages/images/image7.jpeg');
+  }
+  70%, 80%{
+    background-image: url('/src/pages/images/image8.jpeg');
+  }
+
+  80%, 90%{
+    background-image: url('/src/pages/images/image9.jpeg');
+  }
+  90%, 100%{
+    background-image: url('/src/pages/images/image10.jpeg');
+  }
+  
+
 }
+

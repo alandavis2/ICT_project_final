@@ -24,8 +24,9 @@ const SingleBlogPage = () => {
 
   return (
     <div id="b" className="single-blog-container" >
-      <br/>
-      <br/>
+
+      <br/><br/><br/><br/>
+
       <div className="blog-content" style={{ color: 'black', border: '2px solid black', padding: '20px', backgroundColor: 'white' }}>
         <h1>{blog.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: blog.content }} />
