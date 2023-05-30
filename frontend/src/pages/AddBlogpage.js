@@ -39,10 +39,7 @@ const AddBlog = () => {
 
   return (
     <div id='b'>
-<<<<<<< Updated upstream
-=======
       <br/><br/><br/><br/>
->>>>>>> Stashed changes
       <form onSubmit={handleSubmit}>
         <label>
           <span>Title:</span>

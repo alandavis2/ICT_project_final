@@ -24,18 +24,14 @@ const SingleBlogPage = () => {
 
   return (
     <div id="b" className="single-blog-container" >
-<<<<<<< Updated upstream
-=======
+
       <br/><br/><br/><br/>
->>>>>>> Stashed changes
+
       <div className="blog-content" style={{ color: 'black', border: '2px solid black', padding: '20px', backgroundColor: 'white' }}>
         <h1>{blog.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: blog.content }} />
       </div>
     </div>
-
-
-
   );
 }
 

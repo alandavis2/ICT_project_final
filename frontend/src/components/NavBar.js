@@ -6,11 +6,6 @@ import logo from './logo.jpg';  // import your logo
 function Navbar() {
   return (
     <div className="container">
-<<<<<<< Updated upstream
-      <nav className="navbar">
-          <img src={logo} alt="Logo" className="logo" />   {/* Add this */}
-       
-=======
       <nav className="navbar navbar-fixed">
         <Link to="/home" className="logo-link">
           <div className="logo-container">
@@ -18,7 +13,6 @@ function Navbar() {
             <h1 className="logo-text">LearnBlog</h1>
           </div>
         </Link>
->>>>>>> Stashed changes
 
         <div className="tabs">
 
@@ -44,3 +38,4 @@ function Navbar() {
 }
 
 export default Navbar;
+

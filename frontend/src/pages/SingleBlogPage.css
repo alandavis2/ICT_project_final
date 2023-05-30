@@ -30,15 +30,7 @@
 
 
 @keyframes change {
-<<<<<<< Updated upstream
-  1%, 24% {background-image: url('/Users/arun/ICT_project_final/frontend/src/pages/images/image1.jpeg');}
-  25%, 49% {background-image: url('/Users/arun/ICT_project_final/frontend/src/pages/images/image2.jpeg');}
-  50%, 74% {background-image: url('/Users/arun/ICT_project_final/frontend/src/pages/images/image3.jpeg');}
-  75%, 99% {background-image: url('/Users/arun/ICT_project_final/frontend/src/pages/images/images1.jpeg');}
-  100%, 0% {background-image: url('/Users/arun/ICT_project_final/frontend/src/pages/images/image1.jpeg');}
 
-}
-=======
   
   0%, 10%{
     background-image: url('/src/pages/images/image1.jpeg');
@@ -74,4 +66,4 @@
   
 
 }
->>>>>>> Stashed changes
+
