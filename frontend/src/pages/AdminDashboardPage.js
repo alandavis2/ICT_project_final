@@ -35,6 +35,10 @@ function AdminDashboardPage() {
 
   return (
     <div className="dashboard">
+<<<<<<< Updated upstream
+=======
+      <br/><br/><br/>
+>>>>>>> Stashed changes
       <h1 className="dashboard-title">Admin Dashboard</h1>
       {error && <p className="error-message">{error}</p>}
       {message && <p className="success-message">{message}</p>}

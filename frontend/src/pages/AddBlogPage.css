@@ -18,17 +18,22 @@ form label {
   font-size: 1.25rem;
   color: #343a40;
   margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
+
 
 form input[type="text"] {
   margin-bottom: 20px;
   padding: 10px;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
+  flex-grow: 1; /* Add flex-grow: 1; to expand input to fill remaining space */
 }
 
 form button[type="submit"] {
-  align-self: flex-end;
   padding: 10px 20px;
   background-color: #007bff;
   color: white;
@@ -36,11 +41,9 @@ form button[type="submit"] {
   border-radius: 0.25rem;
   cursor: pointer;
   transition: background-color 0.2s;
+  margin-left: 10px; /* Add margin-left: 10px; to create space between button and input */
 }
 
-form button[type="submit"]:hover {
-  background-color: #0056b3;
-}
 
 #b .quill-container {
   height: 400px;

@@ -39,11 +39,14 @@ const AddBlog = () => {
 
   return (
     <div id='b'>
+<<<<<<< Updated upstream
+=======
+      <br/><br/><br/><br/>
+>>>>>>> Stashed changes
       <form onSubmit={handleSubmit}>
         <label>
           <span>Title:</span>
           <input type="text" value={title} onChange={handleTitleChange} required />
-          <button type="submit">Add Blog</button>
         </label>
         <label>
           <span>Content:</span>
@@ -51,6 +54,7 @@ const AddBlog = () => {
         <div id ='a' className="quill-container">
           <ReactQuill value={content} onChange={handleContentChange} />
         </div>
+        <button type="submit">Add Blog</button>
       </form>
     </div>
   );
