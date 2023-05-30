@@ -35,8 +35,9 @@ function AdminDashboardPage() {
 
   return (
     <div className="dashboard">
-      <br></br>
-      <br></br>
+
+      <br/><br/><br/>
+
       <h1 className="dashboard-title">Admin Dashboard</h1>
       {error && <p className="error-message">{error}</p>}
       {message && <p className="success-message">{message}</p>}

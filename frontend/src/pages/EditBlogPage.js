@@ -44,8 +44,9 @@ const EditBlogPage = () => {
 
   return (
     <div id='b'>
-      <br></br>
-      <br></br>
+
+      <br/><br/><br/><br/>
+
       <form onSubmit={handleSubmit}>
         <label>
           Title:
