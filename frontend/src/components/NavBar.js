@@ -5,15 +5,31 @@ import logo from './logo.jpg';  // import your logo
 
 function Navbar() {
   return (
-    <nav className="navbar">
-      <Link to="/about">
-        <img src={logo} alt="Logo" className="logo" />   {/* Add this */}
-      </Link>
+    <div className="container">
+      <nav className="navbar">
+          <img src={logo} alt="Logo" className="logo" />   {/* Add this */}
+       
 
-      <Link className="navbar-link" to="/home">Home</Link>
-      <Link className="navbar-link" to="/add-blog">Add Blog</Link>
-      <Link className="navbar-link" to="/">Logout</Link>
-    </nav>
+        <div className="tabs">
+
+          <button className="tab">
+            <Link className="tab" to="/home">Home</Link>
+          </button>
+
+
+          <button className="tab">
+            <Link className="tab" to="/add-blog">Add Blog</Link>
+          </button>
+
+          <button className="tab">
+            <Link className="tab" to="/">Logout</Link>
+          </button>
+
+
+          <span className="glider"></span>
+        </div>
+      </nav>
+    </div>
   );
 }
 

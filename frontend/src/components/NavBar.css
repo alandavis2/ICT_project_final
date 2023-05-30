@@ -1,19 +1,67 @@
 .navbar {
   display: flex;
+  align-items: center;
+
   justify-content: space-between;
-  padding: 20px;
-  background-color: #f8f9fa;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 0 1px 0 rgba(24, 94, 224, 0.15), 0 6px 12px 0 rgba(24, 94, 224, 0.15);
+  padding: 0.75rem;
+  border-radius: 99px;
 }
 
 .navbar-link {
   text-decoration: none;
-  color: #343a40;
-  transition: color 0.2s;
+  font-size: .8rem;
+  color: black;
+  font-weight: 500;
+  margin-right: 20px;
+  border-radius: 99px;
+  cursor: pointer;
+  transition: color 0.15s ease-in;
 }
 
 .navbar-link:hover {
-  color: #007bff;
+  color: #185ee0;
 }
+
 .logo {
-  height: 20px;  /* Adjust as needed */
+  width: 30px;  /* You can adjust as per your need */
+  height: 30px; /* You can adjust as per your need */
+  cursor: pointer;
+  border-radius: 100%;
+  align-items: center;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.tab {
+  background: none;
+  border: none;
+  text-decoration: none;
+  font-size: .8rem;
+  color: black;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.15s ease-in;
+
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  
+  
+}
+
+.tab:hover {
+  color: #185ee0;
 }

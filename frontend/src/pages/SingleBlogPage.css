@@ -9,13 +9,15 @@
   min-height: calc(100vh - 60px); /* Adjust this value according to the height of your navbar */
   overflow-x: hidden;
   overflow-y: auto;
+  animation: change 40s steps(1) infinite;
+  background-size: cover;
 }
 
 .blog-content {
   width: 100%;
   max-width: 800px; /* This value can be adjusted based on how wide you want your content to be */
   padding: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2);
   border-radius: 5px;
   word-wrap: break-word;
 }
@@ -24,4 +26,13 @@
   font-size: 2em;
   text-align: center;
   margin-bottom: 1em;
+}
+
+@keyframes change {
+  1%, 24% {background-image: url('/Users/arun/ICT_project_final/frontend/src/pages/images/image1.jpeg');}
+  25%, 49% {background-image: url('/Users/arun/ICT_project_final/frontend/src/pages/images/image2.jpeg');}
+  50%, 74% {background-image: url('/Users/arun/ICT_project_final/frontend/src/pages/images/image3.jpeg');}
+  75%, 99% {background-image: url('/Users/arun/ICT_project_final/frontend/src/pages/images/images1.jpeg');}
+  100%, 0% {background-image: url('/Users/arun/ICT_project_final/frontend/src/pages/images/image1.jpeg');}
+
 }
