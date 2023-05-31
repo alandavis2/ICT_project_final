@@ -3,7 +3,7 @@ const app = express();
 const port = 5001;
 
 app.get('/',async(req,res)=>{
-    res.sendFile('/home/arun/ICT_project_final/frontend/src/pages/LoginPage.js')
+    res.sendFile('./frontend/src/pages/LoginPage.js')
 }
 )
 
