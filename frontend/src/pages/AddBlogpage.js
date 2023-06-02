@@ -39,16 +39,15 @@ const AddBlog = () => {
 
   return (
     <div id='b'>
-      <br/><br/><br/><br/>
+      <br /><br /><br /><br />
       <form onSubmit={handleSubmit}>
         <label>
-          <span>Title:</span>
-          <input type="text" value={title} onChange={handleTitleChange} required />
+          <input type="text" placeholder="Title" value={title} onChange={handleTitleChange} required />
         </label>
         <label>
           <span>Content:</span>
         </label>
-        <div id ='a' className="quill-container">
+        <div id='a' className="quill-container">
           <ReactQuill value={content} onChange={handleContentChange} />
         </div>
         <button type="submit">Add Blog</button>
