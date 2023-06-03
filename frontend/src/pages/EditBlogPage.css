@@ -4,7 +4,8 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background-color: #f8f9fa;
+  background-image: url('https://www.avanse.com/blogs/images/Planning-to-study-abroad.jpg');
+  background-size: cover;
 }
 
 form {
@@ -49,4 +50,5 @@ form button[type="submit"]:hover {
   min-height: 200px;
   max-height: 400px;
   overflow-y: auto;
+  background-color: #ffffff;
 }

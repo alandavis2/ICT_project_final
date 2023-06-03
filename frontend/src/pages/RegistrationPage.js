@@ -42,7 +42,7 @@ function RegistrationPage() {
           <input type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" className="login-input" />
         </div>
         <div class="btn">
-          <button type="submit" className="button1">Register</button>
+          <button type="submit" className="button3">Register</button>
         </div>
       </form>
     </div>

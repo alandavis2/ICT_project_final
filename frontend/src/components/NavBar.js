@@ -8,8 +8,8 @@ function Navbar() {
       <nav className="navbar navbar-fixed">
         <Link to="/home" className="logo-link">
           <div className="logo-container">
-            <img src="./logo.jpg" alt="Logo" className="logo" />
-            <h1 className="logo-text">LBlog</h1>
+            <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcShrjyJyyQePryRkrRCorrG0wLMOwxSjWmK8SOB5nKHRaLneh3n" alt="Logo" className="logo" />
+            <h1 className="logo-text">The learning hub</h1>
           </div>
         </Link>
 

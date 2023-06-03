@@ -3,12 +3,13 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f8f9fa;
+  background-image: url('https://www.avanse.com/blogs/images/Planning-to-study-abroad.jpg');
+  background-size: cover;
 }
 
 .form {
   width: 300px;
-  background: #ffffff;
+  background: transparent;
   padding: 30px;
   border-radius: 5px;
   box-shadow: 0px 0px 10px 0px #0000000f;
@@ -17,8 +18,10 @@
 #heading {
   text-align: center;
   margin-bottom: 20px;
-  font-size: 1.5em;
+  font-size: 30px;
   font-weight: bold;
+  color: #ffffff;
+
 }
 
 .field {
@@ -70,5 +73,13 @@
 
 .button2:hover {
   background-color: #5a6268;
+}
+
+.button3 {
+  background-color: #6c757d;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  width: 100%;
 }
 

@@ -1,7 +1,8 @@
 .dashboard {
-  max-width: 800px;
   margin: 0 auto;
   padding: 20px;
+  background-image: url('https://www.avanse.com/blogs/images/Planning-to-study-abroad.jpg');
+  background-size: cover;
 }
 
 .dashboard-title {
