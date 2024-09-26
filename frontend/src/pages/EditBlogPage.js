@@ -2,19 +2,24 @@ import React, { useState, useEffect } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import './EditBlogPage.css';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
-const EditBlogPage = ({ match }) => {
+const EditBlogPage = () => {
+  const { id } = useParams();
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  
+
   useEffect(() => {
-    const blogPost = {
-      title: 'Existing blog post',
-      content: 'This is some existing content...'
-    };
-    setTitle(blogPost.title);
-    setContent(blogPost.content);
-  }, []); // Add dependencies if necessary
+    axios.get(`http://localhost:5001/api/blogs/${id}`)
+      .then(response => {
+        setTitle(response.data.title);
+        setContent(response.data.content);
+      })
+      .catch(error => {
+        console.error("There was an error fetching the blog post:", error);
+      });
+  }, [id]);
 
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
@@ -26,14 +31,22 @@ const EditBlogPage = ({ match }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here, you would typically make a PUT or PATCH request to your API to update the existing blog post
-    console.log({ title, content });
-    setTitle("");
-    setContent("");
+    axios.put(`http://localhost:5001/api/blogs/${id}`, { title, content })
+      .then(response => {
+        console.log(response.data);
+        alert("Blog post updated successfully!");
+      })
+      .catch(error => {
+        console.error("There was an error updating the blog post:", error);
+        alert("There was an error while updating the blog post. Please try again later.");
+      });
   }
 
   return (
     <div id='b'>
+
+      <br/><br/><br/><br/>
+
       <form onSubmit={handleSubmit}>
         <label>
           Title:
@@ -44,7 +57,9 @@ const EditBlogPage = ({ match }) => {
         <label>
           Content:
         </label>
-        <ReactQuill value={content} onChange={handleContentChange} id='a'/>
+        <div id ='a' className="quill-container">
+          <ReactQuill value={content} onChange={handleContentChange} />
+        </div>
         <button type="submit">Update Blog</button>
       </form>
     </div>
@@ -52,4 +67,3 @@ const EditBlogPage = ({ match }) => {
 }
 
 export default EditBlogPage;
-

@@ -1,21 +1,41 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './HomePage.css';
 
-function HomePage() {
-  const blogs = [{ id: 1, title: 'Blog 1' }, { id: 2, title: 'Blog 2' }];//to be changed with Backend code to access data from database
-  
+const HomePage = () => {
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:5001/api/blogs')
+      .then(response => {
+        setBlogs(response.data);
+      })
+      .catch(error => {
+        console.error('There was an error fetching the blogs:', error);
+      });
+  }, []);
+
   return (
-    <div className="container">
-      <h1>Home Page</h1>
-      <div className="blogs">
+    <div className="homepage">
+
+      <h1 className="head">Blog Lists</h1>
+
+      <br/><br/><br/><br/>
+
+      <ul className="blog-list">
         {blogs.map(blog => (
-          <Link className="blog-link" key={blog.id} to={`/blog/${blog.id}`}>{blog.title}</Link>
+          <li key={blog._id} className="blog-item">
+            <div className="blog-card">
+              <h2 className="blog-title">BLOG TITLE : {blog.title}</h2>
+              <p className="blog-excerpt">{blog.content.slice(3, 153)}<Link to={`/blog/${blog._id}`} className="read-more-link">...</Link></p>
+              <Link to={`/blog/${blog._id}`} className="read-more-link">Read more</Link>
+            </div>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 }
 
 export default HomePage;
-

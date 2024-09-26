@@ -1,40 +1,64 @@
 .dashboard {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-  }
-  
-  .dashboard-title {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  .blog-entry {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #ddd;
-    padding: 10px 0;
-  }
-  
-  .blog-title {
-    color: #007BFF;
-    text-decoration: none;
-  }
-  
-  .delete-button {
-    padding: 5px 10px;
-    background-color: #dc3545;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .delete-button:hover {
-    background-color: #c82333;
-  }
-  
+  margin: 0 auto;
+  padding: 20px;
+  background-image: url('https://www.avanse.com/blogs/images/Planning-to-study-abroad.jpg');
+  background-size: cover;
+}
+
+.dashboard-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.error-message,
+.success-message {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.error-message {
+  color: red;
+}
+
+.success-message {
+  color: green;
+}
+
+.blog-entry {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.blog-title {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.blog-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.delete-button,
+.edit-button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 5px; /* Add this */
+}
+
+.delete-button:hover,
+.edit-button:hover {
+  background-color: #0056b3;
+}
+
+.edit-link {
+  color: #fff;
+  text-decoration: none;
+}

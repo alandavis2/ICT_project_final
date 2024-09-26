@@ -1,45 +1,57 @@
-/* AddBlog.css */
-
-.add-blog-container {
-  width: 100%;
-}
-
-.add-blog-form {
+#b {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  padding: 20px;
+  background-image: url('https://www.avanse.com/blogs/images/Planning-to-study-abroad.jpg');
+  background-size: cover;
 }
 
-.add-blog-title-input {
-  margin: 10px 0;
-  width: 50%;
-}
-
-.add-blog-content-input {
-  height: 200px; /* Adjust this value to your liking */
-  width: 50%;
-  margin: 10px 0;
-  overflow-y: auto;
-}
-
-.add-blog-button {
-  margin: 10px 0;
-}
-label{
-  margin: 10px;
-}
-input{
-  margin: 10px;
-}
-#b{
+form {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
   margin-top: 20px;
 }
-#a {
-  margin-top: 130px;
-  position: fixed;
-  top: 10px;
-  bottom: 10px;
-  left: 10px;
-  right: 10px;
+
+form label {
+  font-size: 1.25rem;
+  color: #343a40;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
+form input[type="text"] {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  flex-grow: 1; /* Add flex-grow: 1; to expand input to fill remaining space */
+}
+
+form button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-left: 10px; /* Add margin-left: 10px; to create space between button and input */
+}
+
+
+#b .quill-container {
+  height: 400px;
+  margin-bottom: 20px;
+  border: 1px solid #ffffff;
+  min-height: 200px;
+  max-height: 400px;
   overflow-y: auto;
+  background-color: #ffffff;
 }
